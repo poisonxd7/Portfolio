@@ -22,6 +22,30 @@
  <link rel="stylesheet" href="nice.css" type="text/css" media="all" />
 <link id="theme-link" rel="stylesheet" href="style.css">
 
+  <script>
+  // Force remove Tailwind's dark class
+  document.documentElement.classList.remove('dark');
+  document.body.classList.remove('dark');
+
+  // Optional: clear saved dark mode from localStorage
+  localStorage.removeItem('theme');
+
+  // Optional: override matchMedia to disable system dark mode detection
+  window.matchMedia = function() {
+    return {
+      matches: false, // pretend system is always in light mode
+      addListener: function() {},
+      removeListener: function() {}
+    };
+  };
+
+  // Optional: fix background just in case CSS uses .dark
+  document.addEventListener('DOMContentLoaded', function () {
+    document.documentElement.style.backgroundColor = 'white';
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+  });
+</script>
     <style>
   input:checked ~ .block {
     background-color: #4f46e5; /* Optional: Indigo background when dark */
