@@ -792,9 +792,17 @@ document.getElementById("responsiveModal").classList.add("hidden");
     "retina_detect": true
   });
 </script>
+          <style>
+  html.dark, body.dark {
+    background-color: white !important;
+    color: black !important;
+  }
+</style>
         <body class="flex items-center justify-center h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition duration-500">
           <!-- SVG Symbols -->
-        
+        <script>
+  document.documentElement.classList.remove('dark');
+</script>
         
         </body>
         </html>
