@@ -85,7 +85,7 @@ nav .logo img {
   padding: 10px;
   margin: 110px 0;
 }
-/* Base styles */
+/* Logo Base Styles */
 .logo {
   display: flex;
   flex-direction: column;
@@ -94,73 +94,45 @@ nav .logo img {
   line-height: 1.2;
 }
 
+/* Logo Symbol: clean black with smooth hover + glow */
 .logo .symbol {
-  font-size: 20px;
+  font-size: 24px;
+  color: #111111;
   cursor: pointer;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  animation: pulseGlow 3s infinite ease-in-out;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover glow effect */
 .logo .symbol:hover {
   transform: rotate(6deg) scale(1.1);
-  text-shadow: 0 0 8px currentColor;
+  text-shadow: 0 0 10px #00bbff;
 }
+
+/* Logo Brand Name */
 .logo .brand {
   font-size: 22px;
   font-weight: 600;
+  color: #111111;
   transition: color 0.3s ease;
 }
-#html{
-  font-size: 1.2rem;
-}
+
+/* Subtitle below brand (like "Developer") */
 .logo .role {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
+  color: #00aa55;
   transition: color 0.3s ease;
 }
 
+/* Glowing animation for symbol */
 @keyframes pulseGlow {
   0%, 100% {
-    text-shadow: 0 0 4px currentColor;
+    text-shadow: 0 0 4px #00bbff;
   }
   50% {
-    text-shadow: 0 0 8px currentColor;
-  }
-}
-
-.logo .symbol {
-  animation: pulseGlow 3s infinite ease-in-out;
-}
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  .logo .symbol {
-    color: #0077ff;
-    text-shadow: 0 0 4px #a0d8ff;
-  }
-  
-  .logo .brand {
-    color: #111111;
-  }
-  
-  .logo .role {
-    color: #00aa55;
-  }
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  .logo .symbol {
-    color: #00e0ff;
-    text-shadow: 0 0 6px #00e0ff;
-  }
-  
-  .logo .brand {
-    color: #ffffff;
-  }
-  
-  .logo .role {
-    color: #00ff88;
+    text-shadow: 0 0 8px #00bbff;
   }
 }
 @media (max-width: 767px) {
