@@ -85,13 +85,7 @@ nav .logo img {
   padding: 10px;
   margin: 110px 0;
 }
-
-/* Keep this to preserve layout and font scaling across the page */
-html {
-  font-size: 1.2rem;
-}
-
-/* Logo layout – optional to keep or not */
+/* Base styles */
 .logo {
   display: flex;
   flex-direction: column;
@@ -100,47 +94,75 @@ html {
   line-height: 1.2;
 }
 
-/* Dark Mode Styling Only */
-@media (prefers-color-scheme: dark) {
-  .logo .symbol {
-    font-size: 20px;
-    cursor: pointer;
-    animation: pulseGlow 3s infinite ease-in-out;
-    color: #00e0ff;
-    text-shadow: 0 0 6px #00e0ff;
-    transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
-  }
+.logo .symbol {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
 
-  .logo .symbol:hover {
-    transform: rotate(6deg) scale(1.1);
+/* Hover effect */
+.logo .symbol:hover {
+  transform: rotate(6deg) scale(1.1);
+  text-shadow: 0 0 8px currentColor;
+}
+.logo .brand {
+  font-size: 22px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+#html{
+  font-size: 1.2rem;
+}
+.logo .role {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 4px currentColor;
+  }
+  50% {
     text-shadow: 0 0 8px currentColor;
-  }
-
-  .logo .brand {
-    font-size: 22px;
-    font-weight: 600;
-    color: #ffffff;
-    transition: color 0.3s ease;
-  }
-
-  .logo .role {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: #00ff88;
-    transition: color 0.3s ease;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% {
-      text-shadow: 0 0 4px currentColor;
-    }
-    50% {
-      text-shadow: 0 0 8px currentColor;
-    }
   }
 }
 
+.logo .symbol {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  .logo .symbol {
+    color: #0077ff;
+    text-shadow: 0 0 4px #a0d8ff;
+  }
+  
+  .logo .brand {
+    color: #111111;
+  }
+  
+  .logo .role {
+    color: #00aa55;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .logo .symbol {
+    color: #00e0ff;
+    text-shadow: 0 0 6px #00e0ff;
+  }
+  
+  .logo .brand {
+    color: #ffffff;
+  }
+  
+  .logo .role {
+    color: #00ff88;
+  }
+}
 @media (max-width: 767px) {
   .hero {
     display: flex;
