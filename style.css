@@ -85,56 +85,8 @@ nav .logo img {
   padding: 10px;
   margin: 110px 0;
 }
-/* Logo Base Styles */
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.2;
-}
 
-/* Logo Symbol: clean black with smooth hover + glow */
-.logo .symbol {
-  font-size: 24px;
-  color: #111111;
-  cursor: pointer;
-  animation: pulseGlow 3s infinite ease-in-out;
-  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
-}
 
-/* Hover glow effect */
-.logo .symbol:hover {
-  transform: rotate(6deg) scale(1.1);
-  text-shadow: 0 0 10px #00bbff;
-}
-
-/* Logo Brand Name */
-.logo .brand {
-  font-size: 22px;
-  font-weight: 600;
-  color: #111111;
-  transition: color 0.3s ease;
-}
-
-/* Subtitle below brand (like "Developer") */
-.logo .role {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: #00aa55;
-  transition: color 0.3s ease;
-}
-
-/* Glowing animation for symbol */
-@keyframes pulseGlow {
-  0%, 100% {
-    text-shadow: 0 0 4px #00bbff;
-  }
-  50% {
-    text-shadow: 0 0 8px #00bbff;
-  }
-}
 @media (max-width: 767px) {
   .hero {
     display: flex;
